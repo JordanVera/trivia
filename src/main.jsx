@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={darkTheme}>
       <Router>
         <Routes>
-          <Route path="." element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
