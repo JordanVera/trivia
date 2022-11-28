@@ -4,6 +4,8 @@ $blue: #00D8FF;
 $white: #fff;
 $black: #000;
 $pink: #bd47bd;
+$red: red;
+$green: #06a94d;
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,16 +24,6 @@ $pink: #bd47bd;
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  text-decoration: inherit;
-
-  &:hover {
-    color: #fff;
-    text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $pink,0 0 4px $pink,0 0 6px $pink;
-  }
-}
-
 body {
   margin: 0;
   display: flex;
@@ -40,43 +32,18 @@ body {
   min-height: 100vh;
 }
 
-.mb-12 {
-  margin-bottom: 12px;
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+
+&:visited {
+  text-decoration: inherit;
 }
 
-.pink {
-  color: $pink !important;
-}
-
-.tryAgainButton a {
- color: $black;
-}
-
-.neonHeader {
-  font-size: 3.2em;
-  line-height: 1.1;
-  padding: 16px 0;
-  color: $blue;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-shadow: 0 0 1px #fff,0 0 2px #fff,0 0 3px #fff,0 0 4px $blue,0 0 8px $blue,0 0 12px $blue;
-  word-spacing: .6rem;
-  transition: color .1s ease,text-shadow .1s ease;
-  font-family: Orbitron, sans-serif;
-  font-style: italic;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
-  text-decoration: underline double;
-  text-decoration-color: $white;
-}
-
-.createdBy {
-  text-align: left !important;
-}
-
-.apiShoutout {
-  text-align: right !important;
+  &:hover {
+    color: #fff;
+    text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $pink,0 0 4px $pink,0 0 6px $pink;
+  }
 }
 
 button {
@@ -99,21 +66,80 @@ button {
   }
 }
 
-#categorySelect {
+.redGlow {
+  color: #fff;
+  text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $red,0 0 4px $red,0 0 6px $red;
+}
+
+.greenGlow {
+  color: #fff;
+  text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $green,0 0 4px $green,0 0 6px $green;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.pink {
+  color: $pink !important;
+}
+
+.tryAgainButton a {
+ color: $black;
+}
+
+#wrapper {
+  width: 800px;
+}
+
+.neonHeader, .question  {
+  font-size: 3.2em;
+  line-height: 1.1;
+  padding: 16px 0;
+  color: $blue;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px #fff,0 0 2px #fff,0 0 3px #fff,0 0 4px $blue,0 0 8px $blue,0 0 12px $blue;
+  word-spacing: .6rem;
+  transition: color .1s ease,text-shadow .1s ease;
+  font-family: Orbitron, sans-serif;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: underline double;
+  text-decoration-color: $white;
+}
+
+#categorySelect, #difficultyLabel, #wrongChoices, .createdBy, .question, .multipleChoiceOptions  {
   text-align: left;
 }
 
-#difficultyLabel {
-  text-align: left;
+.apiShoutout {
+  text-align: right !important;
 }
 
 .refreshLink {
   padding: 1rem;
 }
 
-.multipleChoiceOptions {
-  text-align: left !important;
+@media screen and (max-width: 900px) {
+  #wrapper {
+    width: 600px;
+  }
 }
+@media screen and (max-width: 600px) {
+  #wrapper {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #wrapper {
+    width: 320px;
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -8,7 +8,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Box sx={{ minWidth: '300px', maxWidth: '1000px' }}>
+    <Box id='wrapper'>
       <Paper
         elevation={5}
         sx={{

@@ -10,6 +10,7 @@ export default function TriviaForm({ loading }) {
   const [questions, setQuestions] = useState(null);
   const [finalResults, setFinalResults] = useState(false);
   const [score, setScore] = useState(0);
+  const [wrongChoices, setWrongChoices] = useState([]);
 
   return !loading ? (
     <p>loading....</p>
@@ -49,6 +50,8 @@ export default function TriviaForm({ loading }) {
           setQuestions={setQuestions}
           setScore={setScore}
           setFinalResults={setFinalResults}
+          wrongChoices={wrongChoices}
+          setWrongChoices={setWrongChoices}
         />
       )}
       {finalResults && (
@@ -58,6 +61,8 @@ export default function TriviaForm({ loading }) {
           questions={questions}
           score={score}
           setScore={setScore}
+          wrongChoices={wrongChoices}
+          setWrongChoices={setWrongChoices}
         />
       )}
     </>

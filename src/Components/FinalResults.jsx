@@ -6,24 +6,47 @@ const FinalResults = ({
   questions,
   setFinalResults,
   setScore,
+  wrongChoices,
+  setWrongChoices,
 }) => {
   const refreshPage = () => {
     setFinalResults(false);
     setQuestions(null);
     setScore(0);
+    setWrongChoices([]);
   };
 
   const percentageGrade = ((score / questions.length) * 100).toFixed(1);
   return (
     <>
-      <div>
-        {score} out of {questions.length} correct - {percentageGrade}%
+      <div id="grade">
+        <h3>
+          {score} out of {questions.length} correct - {percentageGrade}%
+        </h3>
+        {percentageGrade >= 70 ? (
+          <h2 className="greenGlow passOrFail">you passed!</h2>
+        ) : (
+          <h2 className="redGlow">you failed!</h2>
+        )}
       </div>
-      {percentageGrade >= 70 ? (
-        <div className="mb-12">you passed!</div>
-      ) : (
-        <div className="mb-12">you failed!</div>
-      )}
+
+      <div id="wrongChoices">
+        {wrongChoices.map((badChoice) => {
+          return (
+            <>
+              <h3>{badChoice.question}</h3>
+              <p>
+                <span className="bold redGlow">Your Answer:</span>{' '}
+                {badChoice.data}
+              </p>
+              <p>
+                <span className="bold greenGlow">Correct Answer:</span>{' '}
+                {badChoice.correctAnswer}
+              </p>
+            </>
+          );
+        })}
+      </div>
 
       <Link onClick={refreshPage} className="pink refreshLink">
         Try Another Quiz!
