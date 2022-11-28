@@ -36,13 +36,17 @@ a {
   font-weight: 500;
   text-decoration: inherit;
 
-&:visited {
+  &:visited {
   text-decoration: inherit;
-}
+  }
 
   &:hover {
     color: #fff;
     text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $pink,0 0 4px $pink,0 0 6px $pink;
+  }
+
+  &:active {
+    text-decoration: inherit;
   }
 }
 
@@ -89,7 +93,7 @@ button {
 }
 
 #wrapper {
-  width: 800px;
+  width: 820px;
 }
 
 #speedDial .MuiSpeedDial-fab {
@@ -141,6 +145,10 @@ button {
   #wrapper {
     width: 400px;
   }
+
+  .apiShoutout {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -154,9 +162,6 @@ button {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;

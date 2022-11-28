@@ -19,33 +19,16 @@ export default function TriviaForm({ loading }) {
       {!questions && (
         <>
           <Options setQuestions={setQuestions} />{' '}
-          <Grid container spacing={2}>
-            <Grid item sm={6}>
-              {' '}
-              <p className="createdBy">
-                Created by{' '}
-                <a
-                  href="https://tranquil-castle-40340.herokuapp.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Jordan Vera
-                </a>
-              </p>
-            </Grid>
-            <Grid item sm={6}>
-              <p className="apiShoutout">
-                Questions from{' '}
-                <a
-                  href="https://the-trivia-api.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  The Trivia API
-                </a>
-              </p>
-            </Grid>
-          </Grid>
+          <p className="createdBy">
+            Created by{' '}
+            <a
+              href="https://tranquil-castle-40340.herokuapp.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Jordan Vera
+            </a>
+          </p>
         </>
       )}
       {questions && (
