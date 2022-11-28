@@ -41,7 +41,7 @@ const Questions = ({
 
   return (
     <div id="questions">
-      <h2 className='question'>{`${currentQuestion + 1}. ${
+      <h2 className="question">{`${currentQuestion + 1}. ${
         questions[currentQuestion].question
       }`}</h2>
       <RadioGroup
@@ -49,10 +49,10 @@ const Questions = ({
         name={`${questions[currentQuestion].id}`}
         className={`${questions[currentQuestion].id}`}
       >
-        {[
+        {shuffle([
           ...questions[currentQuestion].incorrectAnswers,
           questions[currentQuestion].correctAnswer,
-        ].map((choice, y) => {
+        ]).map((choice, y) => {
           return (
             <FormControlLabel
               key={`${y}`}
