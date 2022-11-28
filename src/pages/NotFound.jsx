@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/notFound.scss';
 
-export default function NotFound() {
+const NotFound = (_) => {
   return (
     <div id="notfound">
       <div className="notfound">
@@ -23,4 +23,6 @@ export default function NotFound() {
       </div>
     </div>
   );
-}
+};
+
+export default NotFound;

@@ -9,7 +9,7 @@ const FinalResults = ({
   wrongChoices,
   setWrongChoices,
 }) => {
-  const refreshPage = () => {
+  const refreshPage = (_) => {
     setFinalResults(false);
     setQuestions(null);
     setScore(0);

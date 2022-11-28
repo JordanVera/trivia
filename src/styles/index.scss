@@ -92,6 +92,15 @@ button {
   width: 800px;
 }
 
+#speedDial .MuiSpeedDial-fab {
+ background-color: $pink;
+ color: $white;
+}
+
+.MuiSpeedDial-fab:hover {
+  filter: drop-shadow(0 0 1.4em $pink);
+}
+
 .neonHeader, .question  {
   font-size: 3.2em;
   line-height: 1.1;

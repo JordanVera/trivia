@@ -23,10 +23,11 @@ export default function TriviaForm({ loading }) {
             <Grid item sm={6}>
               {' '}
               <p className="createdBy">
-                created by{' '}
+                Created by{' '}
                 <a
                   href="https://tranquil-castle-40340.herokuapp.com/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Jordan Vera
                 </a>
@@ -35,7 +36,11 @@ export default function TriviaForm({ loading }) {
             <Grid item sm={6}>
               <p className="apiShoutout">
                 Questions from{' '}
-                <a href="https://the-trivia-api.com/" target="_blank">
+                <a
+                  href="https://the-trivia-api.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   The Trivia API
                 </a>
               </p>
