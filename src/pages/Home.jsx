@@ -7,8 +7,6 @@ import Navigation from '../Components/Navigation';
 import MobileNavigation from '../Components/MobileNavigation';
 
 const Home = (_) => {
-  const [loading, setLoading] = useState(true);
-
   return (
     <>
       <Box id="wrapper">
@@ -18,7 +16,7 @@ const Home = (_) => {
             p: 4,
           }}
         >
-          <TriviaForm loading={loading} />
+          <TriviaForm />
         </Paper>
       </Box>
       <Navigation />

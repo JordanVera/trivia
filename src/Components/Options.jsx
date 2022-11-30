@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 
-const Options = ({ setQuestions }) => {
+const Options = ({ setQuestions, setLoading }) => {
   const [category, setCategory] = React.useState('');
   const [difficulty, setDifficulty] = React.useState('');
   const [limit, setLimit] = React.useState(10);
@@ -26,6 +26,7 @@ const Options = ({ setQuestions }) => {
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const quizData = await fetch(
       `https://the-trivia-api.com/api/questions?categories=${category}&limit=${limit}&difficulty=${difficulty}`
     );
@@ -34,9 +35,12 @@ const Options = ({ setQuestions }) => {
 
     setQuestions(response);
 
+    setTimeout(() => setLoading(false), 1000);
+
     const form = document.getElementById('contactForm');
     form.reset();
   };
+
   return (
     <>
       {' '}
