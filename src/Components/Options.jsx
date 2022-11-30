@@ -49,7 +49,7 @@ const Options = ({ setQuestions }) => {
       </Typography>
       <form id="contactForm" onSubmit={onFormSubmit}>
         {/* Category */}
-        <FormControl fullWidth sx={{ my: 2 }} required>
+        <FormControl size="small" sx={{ my: 2 }} required fullWidth>
           <InputLabel id="demo-simple-select-label">Quiz Category</InputLabel>
           <Select
             labelid="demo-simple-select-label"
@@ -71,7 +71,7 @@ const Options = ({ setQuestions }) => {
           </Select>
         </FormControl>
         {/* Dificulty */}
-        <FormControl fullWidth sx={{ my: 2 }} required>
+        <FormControl size="small" sx={{ my: 2 }} required fullWidth>
           <InputLabel id="difficultyLabel">Difficulty</InputLabel>
           <Select
             labelid="difficultyLabel"
@@ -90,6 +90,7 @@ const Options = ({ setQuestions }) => {
           Number of questions
         </Typography>
         <Slider
+          size="small"
           labelid="limit"
           min={1}
           max={20}
