@@ -2,7 +2,7 @@
 
 $blue: #00D8FF;
 $white: #fff;
-$black: #000;
+$black: #121212;
 $pink: #bd47bd;
 $red: red;
 $green: #06a94d;
@@ -37,12 +37,12 @@ a {
   text-decoration: inherit;
 
   &:visited {
-  text-decoration: inherit;
+    text-decoration: inherit;
   }
 
   &:hover {
     color: #fff;
-    text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $pink,0 0 4px $pink,0 0 6px $pink;
+    text-shadow: 0 0 1px hsla(0, 0%, 100%, .667), 0 0 2px $pink, 0 0 4px $pink, 0 0 6px $pink;
   }
 
   &:active {
@@ -65,19 +65,20 @@ button {
     border-color: #646cff;
   }
 
-  &:focus, :focus-visible {
+  &:focus,
+  :focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
 }
 
 .redGlow {
   color: #fff;
-  text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $red,0 0 4px $red,0 0 6px $red;
+  text-shadow: 0 0 1px hsla(0, 0%, 100%, .667), 0 0 2px $red, 0 0 4px $red, 0 0 6px $red;
 }
 
 .greenGlow {
   color: #fff;
-  text-shadow: 0 0 1px hsla(0,0%,100%,.667),0 0 2px $green,0 0 4px $green,0 0 6px $green;
+  text-shadow: 0 0 1px hsla(0, 0%, 100%, .667), 0 0 2px $green, 0 0 4px $green, 0 0 6px $green;
 }
 
 .bold {
@@ -89,32 +90,46 @@ button {
 }
 
 .tryAgainButton a {
- color: $black;
+  color: $black;
 }
 
 #wrapper {
   width: 820px;
 }
 
-#speedDial .MuiSpeedDial-fab {
- background-color: $pink;
- color: $white;
+#navigation .MuiSpeedDial-fab {
+  background-color: $blue;
+  color: $black;
+
+  &:hover {
+    filter: drop-shadow(0 0 1.4em $blue);
+  }
 }
 
-.MuiSpeedDial-fab:hover {
-  filter: drop-shadow(0 0 1.4em $pink);
+#mobileNavigation {
+  min-width: 100vw;
+  max-width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+
+  .Mui-selected {
+    color: #B8B8B8;
+  }
 }
 
-.neonHeader, .question  {
+.neonHeader,
+.question {
   font-size: 3.2em;
   line-height: 1.1;
   padding: 16px 0;
   color: $blue;
   font-size: 2.5rem;
   text-transform: uppercase;
-  text-shadow: 0 0 1px #fff,0 0 2px #fff,0 0 3px #fff,0 0 4px $blue,0 0 8px $blue,0 0 12px $blue;
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px $blue, 0 0 8px $blue, 0 0 12px $blue;
   word-spacing: .6rem;
-  transition: color .1s ease,text-shadow .1s ease;
+  transition: color .1s ease, text-shadow .1s ease;
   font-family: Orbitron, sans-serif;
   font-style: italic;
   font-size: 2rem;
@@ -124,7 +139,12 @@ button {
   text-decoration-color: $white;
 }
 
-#categorySelect, #difficultyLabel, #wrongChoices, .createdBy, .question, .multipleChoiceOptions  {
+#categorySelect,
+#difficultyLabel,
+#wrongChoices,
+.createdBy,
+.question,
+.multipleChoiceOptions {
   text-align: left;
 }
 
@@ -136,14 +156,24 @@ button {
   padding: 1rem;
 }
 
+
+
+
+
 @media screen and (max-width: 900px) {
   #wrapper {
     width: 600px;
   }
 }
+
+// Mobile only media query
 @media screen and (max-width: 600px) {
   #wrapper {
     width: 400px;
+  }
+
+  #navigation {
+    display: none;
   }
 
   .apiShoutout {
@@ -151,19 +181,14 @@ button {
   }
 }
 
-@media screen and (max-width: 400px) {
-  #wrapper {
-    width: 320px;
+@media screen and (min-width: 600px) {
+  #mobileNavigation {
+    display: none;
   }
 }
 
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
+@media screen and (max-width: 400px) {
+  #wrapper {
+    width: 320px;
   }
 }

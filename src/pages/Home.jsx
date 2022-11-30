@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import TriviaForm from '../Components/TriviaForm';
 import '../styles/App.scss';
 import Navigation from '../Components/Navigation';
+import MobileNavigation from '../Components/MobileNavigation';
 
 const Home = (_) => {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ const Home = (_) => {
         </Paper>
       </Box>
       <Navigation />
+      <MobileNavigation />
     </>
   );
 };
