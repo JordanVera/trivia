@@ -12,8 +12,9 @@ const Questions = ({
   setWrongChoices,
   wrongChoices,
   setLoading,
+  currentQuestion,
+  setCurrentQuestion,
 }) => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const correctAnswer = questions[currentQuestion].correctAnswer;
 
   useEffect(() => {

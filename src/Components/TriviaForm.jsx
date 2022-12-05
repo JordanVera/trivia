@@ -9,6 +9,7 @@ const TriviaForm = (_) => {
   const [questions, setQuestions] = useState(null);
   const [finalResults, setFinalResults] = useState(false);
   const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questionsLength, setQuestionsLength] = useState(0);
   const [wrongChoices, setWrongChoices] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -42,6 +43,8 @@ const TriviaForm = (_) => {
           setFinalResults={setFinalResults}
           wrongChoices={wrongChoices}
           setWrongChoices={setWrongChoices}
+          currentQuestion={currentQuestion}
+          setCurrentQuestion={setCurrentQuestion}
         />
       )}
       {finalResults && (
