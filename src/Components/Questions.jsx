@@ -52,6 +52,7 @@ const Questions = ({
     setQuestions(null);
     setScore(0);
     setWrongChoices([]);
+    setCurrentQuestion(0);
   };
 
   return (

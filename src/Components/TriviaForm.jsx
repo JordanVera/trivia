@@ -52,6 +52,7 @@ const TriviaForm = (_) => {
           setQuestions={setQuestions}
           setFinalResults={setFinalResults}
           questions={questions}
+          setCurrentQuestion={setCurrentQuestion}
           score={score}
           setScore={setScore}
           wrongChoices={wrongChoices}

@@ -8,12 +8,14 @@ const FinalResults = ({
   setScore,
   wrongChoices,
   setWrongChoices,
+  setCurrentQuestion
 }) => {
   const refreshPage = (_) => {
     setFinalResults(false);
     setQuestions(null);
     setScore(0);
     setWrongChoices([]);
+    setCurrentQuestion(0)
   };
 
   const percentageGrade = ((score / questions.length) * 100).toFixed(1);
