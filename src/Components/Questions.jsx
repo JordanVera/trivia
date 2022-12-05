@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import shuffle from '../utils/shuffle';
+import Link from '@mui/material/Link';
 
 const Questions = ({
   questions,
+  setQuestions,
   setFinalResults,
   setScore,
   score,
@@ -45,6 +47,13 @@ const Questions = ({
     }
   };
 
+  const refreshPage = (_) => {
+    setFinalResults(false);
+    setQuestions(null);
+    setScore(0);
+    setWrongChoices([]);
+  };
+
   return (
     <div id="questions">
       <h2 className="question">{`${currentQuestion + 1}. ${
@@ -70,6 +79,10 @@ const Questions = ({
           );
         })}
       </RadioGroup>
+
+      <Link onClick={refreshPage} className="blue refreshLink">
+        Restart
+      </Link>
     </div>
   );
 };
