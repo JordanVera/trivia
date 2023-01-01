@@ -18,7 +18,7 @@ const NotFound = (_) => {
         <p>
           The page you are looking for might have been removed had its name
           changed or is temporarily unavailable.{' '}
-          <Link to="/">Back to homepage</Link>
+          <Link to="/trivia">Back to homepage</Link>
         </p>
       </div>
     </div>
