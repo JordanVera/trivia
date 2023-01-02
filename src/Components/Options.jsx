@@ -114,6 +114,7 @@ const Options = ({ setQuestions, setLoading }) => {
           Submit{' '}
         </Button>{' '}
       </form>
+      <div id="google_translate_element"></div>
     </>
   );
 };

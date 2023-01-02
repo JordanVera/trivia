@@ -146,12 +146,17 @@ button {
   text-decoration-color: $white;
 }
 
+#google_translate_element {
+  display: block;
+}
+
 #categorySelect,
 #difficultyLabel,
 #wrongChoices,
 .createdBy,
 .question,
-.multipleChoiceOptions {
+.multipleChoiceOptions,
+#google_translate_element {
   text-align: left;
 }
 
