@@ -3,7 +3,7 @@
 $blue: #00D8FF;
 $white: #fff;
 $black: #121212;
-$pink: #bd47bd;
+$pink: #FFADFF;
 $red: red;
 $green: #06a94d;
 
@@ -34,14 +34,14 @@ body {
 
 a {
   font-weight: 500;
-  text-decoration: inherit;
+  text-decoration: none !important;
 
   &:visited {
     text-decoration: inherit;
   }
 
   &:hover {
-    color: #fff;
+    color: #fff !important;
     text-shadow: 0 0 1px hsla(0, 0%, 100%, .667), 0 0 2px $pink, 0 0 4px $pink, 0 0 6px $pink;
   }
 
