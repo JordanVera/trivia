@@ -47,7 +47,7 @@ const Options = ({ setQuestions, setLoading }) => {
       <Typography
         variant="h1"
         className="neonHeader"
-        sx={{ fontSize: '30px', py: 2 }}
+        sx={{ fontSize: '1.8rem', py: 2 }}
       >
         Please select a category to be quized on
       </Typography>

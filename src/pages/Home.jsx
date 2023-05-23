@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import TriviaForm from '../Components/TriviaForm';
 import '../styles/App.scss';

@@ -24,7 +24,7 @@ const TriviaForm = (_) => {
           <p className="createdBy">
             Created by{' '}
             <a
-              href="https://tranquil-castle-40340.herokuapp.com/"
+              href="https://www.jordanvera.com/"
               target="_blank"
               rel="noreferrer"
             >

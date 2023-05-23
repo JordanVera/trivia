@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
@@ -21,7 +21,7 @@ const MobileNavigation = (_) => {
         <BottomNavigationAction
           label="Contact"
           icon={<ContactPageIcon />}
-          href="https://tranquil-castle-40340.herokuapp.com/"
+          href="https://www.jordanvera.com/"
           target="_blank"
           rel="noreferrer"
         />

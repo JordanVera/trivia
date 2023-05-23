@@ -18,7 +18,7 @@ const Navigation = (_) => {
         key={1}
         icon={<ContactPageIcon />}
         tooltipTitle="Contact"
-        href="https://tranquil-castle-40340.herokuapp.com/"
+        href="https://www.jordanvera.com/"
         target="_blank"
         rel="noreferrer"
       />
