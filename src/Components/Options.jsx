@@ -1,11 +1,13 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
-import Slider from '@mui/material/Slider';
-import Typography from '@mui/material/Typography';
+import {
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Slider,
+  Typography,
+} from '@mui/material';
+import { Button } from 'ui-neumorphism';
 
 const Options = ({ setQuestions, setLoading }) => {
   const [category, setCategory] = React.useState('');
@@ -47,11 +49,11 @@ const Options = ({ setQuestions, setLoading }) => {
       <Typography
         variant="h1"
         className="neonHeader"
-        sx={{ fontSize: '1.8rem', py: 2 }}
+        sx={{ fontSize: '1.8rem' }}
       >
         Please select a category to be quized on
       </Typography>
-      <form id="contactForm" onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="m-0 p-0">
         {/* Category */}
         <FormControl size="small" sx={{ my: 2 }} required fullWidth>
           <InputLabel id="demo-simple-select-label">Quiz Category</InputLabel>
@@ -105,16 +107,11 @@ const Options = ({ setQuestions, setLoading }) => {
           required
         />
         {/* Submit */}
-        <Button
-          className="submitButton"
-          variant="contained"
-          type="submit"
-          sx={{ width: '100%', my: 3 }}
-        >
+        <Button dark className="submitBtn mb-5">
           Submit{' '}
-        </Button>{' '}
+        </Button>
       </form>
-      <div id="google_translate_element"></div>
+      {/* <div id="google_translate_element"></div> */}
     </>
   );
 };

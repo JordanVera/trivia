@@ -11,22 +11,21 @@ import 'ui-neumorphism/dist/index.css';
 const Home = (_) => {
   return (
     <>
-      <Card dark id="wrapper">
+      <Card dark id="wrapper" className=" p-5">
         <CardContent>
           <TriviaForm />
-        </CardContent>
-        <CardAction>
           <p className="createdBy">
             Created by{' '}
             <a
               href="https://www.jordanvera.com/"
               target="_blank"
               rel="noreferrer"
+              className="pink"
             >
               Jordan Vera
             </a>
           </p>
-        </CardAction>
+        </CardContent>
       </Card>
 
       <Navigation />
