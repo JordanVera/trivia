@@ -5,20 +5,30 @@ import TriviaForm from '../Components/TriviaForm';
 import '../styles/App.scss';
 import Navigation from '../Components/Navigation';
 import MobileNavigation from '../Components/MobileNavigation';
+import { Card, CardContent, CardAction, Button } from 'ui-neumorphism';
+import 'ui-neumorphism/dist/index.css';
 
 const Home = (_) => {
   return (
     <>
-      <Box id="wrapper">
-        <Paper
-          elevation={5}
-          sx={{
-            p: 4,
-          }}
-        >
+      <Card dark id="wrapper">
+        <CardContent>
           <TriviaForm />
-        </Paper>
-      </Box>
+        </CardContent>
+        <CardAction>
+          <p className="createdBy">
+            Created by{' '}
+            <a
+              href="https://www.jordanvera.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Jordan Vera
+            </a>
+          </p>
+        </CardAction>
+      </Card>
+
       <Navigation />
       <MobileNavigation />
     </>

@@ -19,19 +19,7 @@ const TriviaForm = (_) => {
   ) : (
     <>
       {!questions && (
-        <>
-          <Options setQuestions={setQuestions} setLoading={setLoading} />{' '}
-          <p className="createdBy">
-            Created by{' '}
-            <a
-              href="https://www.jordanvera.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Jordan Vera
-            </a>
-          </p>
-        </>
+        <Options setQuestions={setQuestions} setLoading={setLoading} />
       )}
       {questions && (
         <Questions
