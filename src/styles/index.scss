@@ -1,10 +1,9 @@
-// @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Lora&display=swap');
 
-$blue: #00D8FF;
+$blue: #fcff99;
 $white: #fff;
 $black: #121212;
 $gray: #444;
@@ -55,30 +54,9 @@ a {
   }
 }
 
-.submitBtn {
-  width: 100%;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
 
-  &:hover {
-    border-color: #646cff;
-  }
 
-  &:focus,
-  :focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-}
 
 .redGlow {
   color: #fff;
@@ -137,22 +115,74 @@ button {
 
 .neonHeader,
 .question {
-  line-height: 1.1;
 
   color: $blue;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  word-spacing: .6rem;
+
   transition: color .1s ease, text-shadow .1s ease;
-  font-family: Orbitron, sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
   text-decoration-color: $white;
 }
 
-#google_translate_element {
-  display: block;
+
+input[type='range'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    border: none;
+  }
+}
+
+.range-style {
+  width: 100%;
+  height: 30px;
+  background: $gray; // Make sure this color works well with #444
+  border-radius: 10px;
+
+
+  @mixin track-style {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  @mixin thumb-style {
+    position: relative;
+    top: -50%;
+    width: 30px;
+    height: 30px;
+    background-color: $blue; // Make sure this color works well with #444
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    box-shadow: 5px 5px 12px var(--dark-bg-dark-shadow), -4px -4px 10px var(--dark-bg-light-shadow)
+  }
+
+
+  &::-webkit-slider-runnable-track {
+    @include track-style;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb-style;
+  }
+
+  &::-moz-range-track {
+    @include track-style;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb-style;
+  }
 }
 
 #categorySelect,
@@ -160,8 +190,7 @@ button {
 #wrongChoices,
 .createdBy,
 .question,
-.multipleChoiceOptions,
-#google_translate_element {
+.multipleChoiceOptions {
   text-align: left;
 }
 

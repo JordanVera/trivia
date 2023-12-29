@@ -9,7 +9,7 @@ import './styles/index.scss';
 const darkTheme = createTheme({
   palette: {
     primary: {
-      main: '#00D8FF',
+      main: '#fcff99',
     },
     mode: 'dark',
   },

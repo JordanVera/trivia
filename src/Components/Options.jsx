@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import {
   InputLabel,
   MenuItem,
@@ -9,10 +9,34 @@ import {
 } from '@mui/material';
 import { Button } from 'ui-neumorphism';
 
+import { styled } from '@mui/system';
+
+const NeumorphicSelect = styled(Select)`
+  background-color: #444;
+  border-radius: 8px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3),
+      -6px -6px 12px rgba(255, 255, 255, 0.7), 0 0 0 2px #1976d2;
+    border: none !important;
+  }
+`;
+
 const Options = ({ setQuestions, setLoading }) => {
-  const [category, setCategory] = React.useState('');
-  const [difficulty, setDifficulty] = React.useState('');
+  const [category, setCategory] = useState('');
+  const [difficulty, setDifficulty] = useState('');
   const [limit, setLimit] = React.useState(10);
+
+  const [value, setValue] = useState(10);
+
+  const handleRangeChange = (event) => {
+    setValue(event.target.value);
+  };
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -46,25 +70,31 @@ const Options = ({ setQuestions, setLoading }) => {
   return (
     <>
       {' '}
-      <Typography
-        variant="h1"
-        className="neonHeader"
-        sx={{ fontSize: '1.8rem' }}
-      >
+      <h1 className="neonHeader capitalize font-bold mb-5 text-2xl">
         Please select a category to be quized on
-      </Typography>
-      <form onSubmit={onFormSubmit} className="m-0 p-0">
+      </h1>
+      <form onSubmit={onFormSubmit} className="m-0 p-0" id="contactForm">
         {/* Category */}
-        <FormControl size="small" sx={{ my: 2 }} required fullWidth>
+        <FormControl
+          size="small"
+          sx={{ my: 2, border: 'none' }}
+          required
+          fullWidth
+        >
           <InputLabel id="demo-simple-select-label">Quiz Category</InputLabel>
-          <Select
+
+          <NeumorphicSelect
             labelid="demo-simple-select-label"
             id="categorySelect"
             value={category}
             label="category"
             onChange={handleChange}
+            className="h-10"
+            sx={{ border: 'none' }} // BEGIN: Added this line to remove border
           >
-            <MenuItem value="arts_and_literature">Arts & Lierature</MenuItem>
+            <MenuItem value="arts_and_literature" selected>
+              Arts & Lierature
+            </MenuItem>
             <MenuItem value="film_and_tv">Film & TV</MenuItem>
             <MenuItem value="food_and_drink">Food & Drink</MenuItem>
             <MenuItem value="general_knowledge">General Knowledge</MenuItem>
@@ -74,42 +104,51 @@ const Options = ({ setQuestions, setLoading }) => {
             <MenuItem value="science">Science</MenuItem>
             <MenuItem value="society_and_culture">Society & Culture</MenuItem>
             <MenuItem value="sport_and_leisure">Sport & Leisure</MenuItem>
-          </Select>
+            {/* MenuItems */}
+          </NeumorphicSelect>
         </FormControl>
+
         {/* Dificulty */}
         <FormControl size="small" sx={{ my: 2 }} required fullWidth>
           <InputLabel id="difficultyLabel">Difficulty</InputLabel>
-          <Select
+          <NeumorphicSelect
             labelid="difficultyLabel"
             id="difficultyLabel"
             value={difficulty}
             label="difficulty"
             onChange={handleDifficulty}
+            className="h-10"
+            sx={{ border: 'none' }} // BEGIN: Added this line to remove border
           >
             <MenuItem value="easy">Easy</MenuItem>
             <MenuItem value="medium">Medium</MenuItem>
             <MenuItem value="hard">Hard</MenuItem>
-          </Select>
+          </NeumorphicSelect>
         </FormControl>
-        {/* No. of question */}
-        <Typography gutterBottom sx={{ textAlign: 'left', mt: 1 }}>
-          Number of questions
-        </Typography>
-        <Slider
-          size="small"
-          labelid="limit"
-          min={1}
-          max={20}
-          defaultValue={10}
-          aria-label="Default"
-          valueLabelDisplay="auto"
-          onChange={handleLimit}
-          required
-        />
-        {/* Submit */}
-        <Button dark className="submitBtn mb-5">
-          Submit{' '}
-        </Button>
+        <div className="mb-10 mt-5">
+          {/* ...existing code... */}
+          <h2 className="text-left text-sm  mb-2">
+            Number of questions: <span className="range-value">{limit}</span>
+          </h2>
+          <input
+            type="range"
+            className="range-style"
+            min={1}
+            max={20}
+            defaultValue={10}
+            value={limit}
+            onChange={handleLimit}
+            required
+          />
+          {/* ...existing code... */}
+        </div>
+
+        <button className="w-full">
+          {' '}
+          <Button dark block className="mb-5">
+            Submit{' '}
+          </Button>
+        </button>
       </form>
       {/* <div id="google_translate_element"></div> */}
     </>
