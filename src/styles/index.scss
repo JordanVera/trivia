@@ -55,6 +55,18 @@ a {
 }
 
 
+// NEUMORPH
+
+.neoContainer {
+  border-radius: 4px;
+  background: #444444;
+  box-shadow: 5px 5px 12px #363636, -4px -4px 10px #525252;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+// END NEUMORPH
+
+
 .redGlow {
   color: #fff;
   text-shadow: 0 0 1px hsla(0, 0%, 100%, .667), 0 0 2px $red, 0 0 4px $red, 0 0 6px $red;
@@ -90,6 +102,8 @@ a {
     filter: drop-shadow(0 0 1.4em $blue);
   }
 }
+
+
 
 #mobileNavigation {
   min-width: 100vw;

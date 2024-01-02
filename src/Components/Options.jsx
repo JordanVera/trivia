@@ -15,9 +15,7 @@ const NeumorphicSelect = styled(Select)`
   background-color: #444;
   border-radius: 8px;
   border: none !important;
-  box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.1),
-    2px 2px 8px rgba(0, 0, 0, 0.5);
-  padding: 8px 16px;
+  box-shadow: 5px 5px 12px #363636, -4px -4px 10px #525252;
   transition: box-shadow 0.3s ease-in-out;
 
   &:focus {
@@ -74,24 +72,28 @@ const Options = ({ setQuestions, setLoading }) => {
       <h1 className="neonHeader capitalize font-bold mb-5 text-2xl">
         Please select a category to be quized on
       </h1>
-      <form onSubmit={onFormSubmit} className="m-0 p-0" id="contactForm">
+      <form onSubmit={onFormSubmit} className="m-0 p-0 " id="contactForm ">
         {/* Category */}
         <FormControl
           size="small"
-          className="my-2 border-transparent"
+          sx={{ my: 2, border: 'none !important' }}
           required
           fullWidth
         >
-          <label htmlFor="categorySelect" className="text-sm">
-            Quiz Category
+          <label htmlFor="categorySelect" className="text-left text-sm mb-2">
+            {' '}
+            Select a Category
           </label>
           <select
+            labelid="demo-simple-select-label"
             id="categorySelect"
             value={category}
+            label="category"
+            defaultValue={'select a category'}
             onChange={handleChange}
-            className="h-10 bg-[#444] border border-gray-600 text-white rounded-md px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="h-10 bg-[#444] neoContainer px-3"
           >
-            <option value="arts_and_literature">Arts & Literature</option>
+            <option value="arts_and_literature">Arts & Lierature</option>
             <option value="film_and_tv">Film & TV</option>
             <option value="food_and_drink">Food & Drink</option>
             <option value="general_knowledge">General Knowledge</option>
@@ -101,25 +103,30 @@ const Options = ({ setQuestions, setLoading }) => {
             <option value="science">Science</option>
             <option value="society_and_culture">Society & Culture</option>
             <option value="sport_and_leisure">Sport & Leisure</option>
+            {/* Options */}
           </select>
         </FormControl>
 
         {/* Dificulty */}
         <FormControl size="small" sx={{ my: 2 }} required fullWidth>
-          <InputLabel id="difficultyLabel">Difficulty</InputLabel>
-          <NeumorphicSelect
+          <label htmlFor="difficultyLabel" className="text-left text-sm mb-2">
+            {' '}
+            Select a Difficulty
+          </label>
+          <select
             labelid="difficultyLabel"
             id="difficultyLabel"
             value={difficulty}
             label="difficulty"
             onChange={handleDifficulty}
-            className="h-10"
+            className="h-10 bg-[#444] neoContainer px-3"
             sx={{ border: 'none' }} // BEGIN: Added this line to remove border
+            native // BEGIN: Added this line to make it a native select
           >
-            <MenuItem value="easy">Easy</MenuItem>
-            <MenuItem value="medium">Medium</MenuItem>
-            <MenuItem value="hard">Hard</MenuItem>
-          </NeumorphicSelect>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
         </FormControl>
         <div className="mb-10 mt-5">
           {/* ...existing code... */}
