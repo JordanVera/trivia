@@ -14,6 +14,7 @@ import { styled } from '@mui/system';
 const NeumorphicSelect = styled(Select)`
   background-color: #444;
   border-radius: 8px;
+  border: none !important;
   box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.1),
     2px 2px 8px rgba(0, 0, 0, 0.5);
   padding: 8px 16px;
@@ -77,35 +78,30 @@ const Options = ({ setQuestions, setLoading }) => {
         {/* Category */}
         <FormControl
           size="small"
-          sx={{ my: 2, border: 'none' }}
+          className="my-2 border-transparent"
           required
           fullWidth
         >
-          <InputLabel id="demo-simple-select-label">Quiz Category</InputLabel>
-
-          <NeumorphicSelect
-            labelid="demo-simple-select-label"
+          <label htmlFor="categorySelect" className="text-sm">
+            Quiz Category
+          </label>
+          <select
             id="categorySelect"
             value={category}
-            label="category"
             onChange={handleChange}
-            className="h-10"
-            sx={{ border: 'none' }} // BEGIN: Added this line to remove border
+            className="h-10 bg-[#444] border border-gray-600 text-white rounded-md px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <MenuItem value="arts_and_literature" selected>
-              Arts & Lierature
-            </MenuItem>
-            <MenuItem value="film_and_tv">Film & TV</MenuItem>
-            <MenuItem value="food_and_drink">Food & Drink</MenuItem>
-            <MenuItem value="general_knowledge">General Knowledge</MenuItem>
-            <MenuItem value="geography">Geography</MenuItem>
-            <MenuItem value="history">History</MenuItem>
-            <MenuItem value="music">Music</MenuItem>
-            <MenuItem value="science">Science</MenuItem>
-            <MenuItem value="society_and_culture">Society & Culture</MenuItem>
-            <MenuItem value="sport_and_leisure">Sport & Leisure</MenuItem>
-            {/* MenuItems */}
-          </NeumorphicSelect>
+            <option value="arts_and_literature">Arts & Literature</option>
+            <option value="film_and_tv">Film & TV</option>
+            <option value="food_and_drink">Food & Drink</option>
+            <option value="general_knowledge">General Knowledge</option>
+            <option value="geography">Geography</option>
+            <option value="history">History</option>
+            <option value="music">Music</option>
+            <option value="science">Science</option>
+            <option value="society_and_culture">Society & Culture</option>
+            <option value="sport_and_leisure">Sport & Leisure</option>
+          </select>
         </FormControl>
 
         {/* Dificulty */}
