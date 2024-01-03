@@ -1,30 +1,6 @@
 import React, { useState } from 'react';
-import {
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  Slider,
-  Typography,
-} from '@mui/material';
+import { FormControl } from '@mui/material';
 import { Button } from 'ui-neumorphism';
-
-import { styled } from '@mui/system';
-
-const NeumorphicSelect = styled(Select)`
-  background-color: #444;
-  border-radius: 8px;
-  border: none !important;
-  box-shadow: 5px 5px 12px #363636, -4px -4px 10px #525252;
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:focus {
-    outline: none;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3),
-      -6px -6px 12px rgba(255, 255, 255, 0.7), 0 0 0 2px #1976d2;
-    border: none !important;
-  }
-`;
 
 const Options = ({ setQuestions, setLoading }) => {
   const [category, setCategory] = useState('');

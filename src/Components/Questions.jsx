@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import shuffle from '../utils/shuffle';
 import Link from '@mui/material/Link';
+import { Button } from 'ui-neumorphism';
 
 const Questions = ({
   questions,
@@ -57,13 +56,13 @@ const Questions = ({
 
   return (
     <div id="questions">
-      <h2 className="question">{`${currentQuestion + 1}. ${
-        questions[currentQuestion].question
-      }`}</h2>
+      <h2 className="question font-bold text-xl mb-5">{`${
+        currentQuestion + 1
+      }. ${questions[currentQuestion].question}`}</h2>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         name={`${questions[currentQuestion].id}`}
-        className={`${questions[currentQuestion].id}`}
+        className={`${questions[currentQuestion].id} mb-10`}
       >
         {shuffle([
           ...questions[currentQuestion].incorrectAnswers,
@@ -81,9 +80,9 @@ const Questions = ({
         })}
       </RadioGroup>
 
-      <Link onClick={refreshPage} className="blue refreshLink">
-        Restart
-      </Link>
+      <Button onClick={refreshPage} dark block className="mb-5 ">
+        <p className="blue capitalize pink">Restart</p>
+      </Button>
     </div>
   );
 };
