@@ -15,6 +15,8 @@ const shuffle = (array) => {
     ];
   }
 
+  console.log('SHUFFLE TRIGGER');
+
   return array;
 };
 

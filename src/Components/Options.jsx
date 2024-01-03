@@ -56,7 +56,10 @@ const Options = ({ setQuestions, setLoading }) => {
           required
           fullWidth
         >
-          <label htmlFor="categorySelect" className="text-left text-sm mb-2">
+          <label
+            htmlFor="categorySelect"
+            className="text-left text-sm mb-2 text-[#fcff99] font-bold"
+          >
             {' '}
             Select a Category
           </label>
@@ -85,7 +88,10 @@ const Options = ({ setQuestions, setLoading }) => {
 
         {/* Dificulty */}
         <FormControl size="small" sx={{ my: 2 }} required fullWidth>
-          <label htmlFor="difficultyLabel" className="text-left text-sm mb-2">
+          <label
+            htmlFor="difficultyLabel"
+            className="text-left text-sm mb-2 text-[#fcff99] font-bold"
+          >
             {' '}
             Select a Difficulty
           </label>
@@ -106,7 +112,7 @@ const Options = ({ setQuestions, setLoading }) => {
         </FormControl>
         <div className="mb-10 mt-5">
           {/* ...existing code... */}
-          <h2 className="text-left text-sm  mb-2">
+          <h2 className="text-left text-sm  mb-2 text-[#fcff99] font-bold">
             Number of questions: <span className="range-value">{limit}</span>
           </h2>
           <input
@@ -125,7 +131,7 @@ const Options = ({ setQuestions, setLoading }) => {
         <button className="w-full">
           {' '}
           <Button dark block className="mb-5">
-            Submit{' '}
+            <p className="capitalize">Submit </p>
           </Button>
         </button>
       </form>

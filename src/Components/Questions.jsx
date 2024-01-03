@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import shuffle from '../utils/shuffle';
-import Link from '@mui/material/Link';
 import { Button } from 'ui-neumorphism';
 
 const Questions = ({
@@ -16,13 +15,15 @@ const Questions = ({
   currentQuestion,
   setCurrentQuestion,
 }) => {
+  const [selectedAnswer, setselectedAnswer] = useState(null);
+  const [shuffledChoices, setShuffledChoices] = useState([]);
   const correctAnswer = questions[currentQuestion].correctAnswer;
 
   useEffect(() => {
     setLoading(false);
   });
 
-  const optionClicked = (data) => {
+  const submitQuestion = (data) => {
     const badChoiceData = {
       data,
       correctAnswer,
@@ -54,32 +55,49 @@ const Questions = ({
     setCurrentQuestion(0);
   };
 
+  useEffect(() => {
+    const choicesToShuffle = [
+      ...questions[currentQuestion].incorrectAnswers,
+      questions[currentQuestion].correctAnswer,
+    ];
+    setShuffledChoices(shuffle(choicesToShuffle));
+  }, [currentQuestion, questions]);
+
   return (
     <div id="questions">
       <h2 className="question font-bold text-xl mb-5">{`${
         currentQuestion + 1
       }. ${questions[currentQuestion].question}`}</h2>
-      <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        name={`${questions[currentQuestion].id}`}
-        className={`${questions[currentQuestion].id} mb-10`}
-      >
-        {shuffle([
-          ...questions[currentQuestion].incorrectAnswers,
-          questions[currentQuestion].correctAnswer,
-        ]).map((choice, y) => {
+      <div className="radiogroup mb-5 text-left">
+        {shuffledChoices.map((choice, y) => {
+          const choiceId = `choice-${y}`;
           return (
-            <FormControlLabel
-              key={`${y}`}
-              value={`${choice}`}
-              control={<Radio />}
-              label={`${choice}`}
-              onChange={() => optionClicked(choice)}
-            />
+            <div key={choiceId} className="wrapper">
+              <input
+                className="state"
+                type="radio"
+                name={`${questions[currentQuestion].id}`}
+                id={choiceId}
+                value={choice}
+                onChange={(e) => setselectedAnswer(e.target.value)}
+              />
+              <label className="label" htmlFor={choiceId}>
+                <div className="indicator"></div>
+                <span className="text">{choice}</span>
+              </label>
+            </div>
           );
         })}
-      </RadioGroup>
+      </div>
 
+      <Button
+        dark
+        block
+        className="mb-5 "
+        onClick={() => submitQuestion(selectedAnswer)}
+      >
+        <p className="capitalize">Submit</p>
+      </Button>
       <Button onClick={refreshPage} dark block className="mb-5 ">
         <p className="capitalize">Restart</p>
       </Button>
