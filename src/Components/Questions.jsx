@@ -74,16 +74,16 @@ const Questions = ({
           return (
             <div key={choiceId} className="wrapper">
               <input
-                className="state"
+                className="state "
                 type="radio"
                 name={`${questions[currentQuestion].id}`}
                 id={choiceId}
                 value={choice}
                 onChange={(e) => setselectedAnswer(e.target.value)}
               />
-              <label className="label" htmlFor={choiceId}>
+              <label className="label " htmlFor={choiceId}>
                 <div className="indicator"></div>
-                <span className="text">{choice}</span>
+                <span className="text ">{choice}</span>
               </label>
             </div>
           );
@@ -97,9 +97,6 @@ const Questions = ({
         onClick={() => submitQuestion(selectedAnswer)}
       >
         <p className="capitalize">Submit</p>
-      </Button>
-      <Button onClick={refreshPage} dark block className="mb-5 ">
-        <p className="capitalize">Restart</p>
       </Button>
     </div>
   );

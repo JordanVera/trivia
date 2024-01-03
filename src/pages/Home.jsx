@@ -14,26 +14,6 @@ const Home = (_) => {
       <Card dark id="wrapper" className=" p-5">
         <CardContent>
           <TriviaForm />
-
-          <div className="w-[215px]">
-            <p
-              className="createdBy py-2 px-5 rounded-lg"
-              style={{
-                boxShadow:
-                  ' 4px 4px 4px 0px #363636 inset, -4px -4px 4px 0px #525252 inset',
-              }}
-            >
-              Created by{' '}
-              <a
-                href="https://www.jordanvera.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="pink"
-              >
-                Jordan Vera
-              </a>
-            </p>
-          </div>
         </CardContent>
       </Card>
 
