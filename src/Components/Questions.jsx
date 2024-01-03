@@ -81,7 +81,7 @@ const Questions = ({
       </RadioGroup>
 
       <Button onClick={refreshPage} dark block className="mb-5 ">
-        <p className="blue capitalize pink">Restart</p>
+        <p className="capitalize">Restart</p>
       </Button>
     </div>
   );
